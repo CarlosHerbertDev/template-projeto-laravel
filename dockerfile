@@ -1,6 +1,5 @@
 FROM php:8.2.18-apache
 
-# Dependências do GD + utilitários comuns
 RUN apt-get update && \
     apt-get install -y \
         unzip \
@@ -13,11 +12,9 @@ RUN apt-get update && \
     docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp && \
     docker-php-ext-install -j$(nproc) gd
 
-# Extensões do PHP
 RUN docker-php-ext-install pdo pdo_mysql
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-# Ajuste do DocumentRoot para apontar para /public
 RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|g' /etc/apache2/sites-available/000-default.conf

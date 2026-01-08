@@ -1,0 +1,45 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Usuários - Módulo Autenticação Backend",
+        "description": "Documentação da API de Gerenciamento de Usuários",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/swagger-test": {
+            "get": {
+                "tags": [
+                    "Swagger Test"
+                ],
+                "summary": "Endpoint de teste para o Swagger",
+                "operationId": "7234bfaaaf461498e166ee8bad3ed59e",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "Insira seu token JWT. Exemplo: seu_token_aqui",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Swagger Test",
+            "description": "Swagger Test"
+        }
+    ]
+}

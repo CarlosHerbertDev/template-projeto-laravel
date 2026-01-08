@@ -7,6 +7,7 @@ a2enmod rewrite
 # ⚠️ Configurações abaixo são APENAS para Docker
 # Para servidor compartilhado (Hostinger, Kinghost), use .htaccess ou php.ini
 # Aumentar limites de upload e timeout do PHP
+
 echo "upload_max_filesize=100M" > /usr/local/etc/php/conf.d/custom.ini
 echo "post_max_size=100M" >> /usr/local/etc/php/conf.d/custom.ini
 echo "max_execution_time=300" >> /usr/local/etc/php/conf.d/custom.ini
